@@ -1,0 +1,30 @@
+{
+  "name": "baby_data",
+  "version": "1.0.0",
+  "description": "Log Baby Info",
+  "main": "baby.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinpolchinski/baby_Data.git"
+  },
+  "keywords": [
+    "baby",
+    "infant"
+  ],
+  "author": "Justin Polchinski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinpolchinski/baby_Data/issues"
+  },
+  "homepage": "https://github.com/justinpolchinski/baby_Data#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "ip": "^1.1.5",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  }
+}
