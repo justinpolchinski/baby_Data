@@ -37,6 +37,8 @@ app.post('/poop', function(req,res){
     
     connection.query("INSERT INTO babyThings SET ?",
       {
+        sleeping: nothing,
+        feeding: nothing,
        diaperChange: time1 
     },function(err,result){
         console.log( time1);
@@ -49,7 +51,9 @@ app.post('/feeding', function(req,res){
     
     connection.query("INSERT INTO babyThings SET ?",
       {
-       feeding: time1 
+        sleeping: nothing,
+       feeding: time1, 
+       diaperChange: nothing
     },function(err,result){
         console.log( time1);
         res.redirect("/");
@@ -61,7 +65,9 @@ app.post('/sleep', function(req,res){
     
     connection.query("INSERT INTO babyThings SET ?",
       {
-       sleeping: time1 
+       sleeping: time1,
+       diaperChange: nothing, 
+       feeding: nothing,
     },function(err,result){
         console.log( time1);
         res.redirect("/");
