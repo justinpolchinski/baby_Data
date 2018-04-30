@@ -95,6 +95,14 @@ app.get("/api", function (req,res){
   });
 function logTime(){
   d = new Date();
-  timeIs = (d.getMonth()+1).toString() + "/" + d.getDate().toString() + "/" + d.getFullYear().toString() + " " + d.getHours().toString() + ":" + d.getMinutes().toString();
+  timeIs = (d.getMonth()+1).toString() + "/" + d.getDate().toString() + "/" + d.getFullYear().toString() + " " + d.getHours().toString() + ":" + zeroInFront(d.getMinutes());
   time1 = timeIs;
+}
+function zeroInFront(a){
+  if (a<=9){
+    return a = "0" + a.toString();
+  }
+  else{
+  return a = a.toString();
+  }
 }
