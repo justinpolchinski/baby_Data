@@ -1,0 +1,28 @@
+h1{
+    margin: auto;
+    margin-top: 2%;
+    padding: 1%;
+    border: black 2px solid;
+    background: yellow;
+    text-align: center;
+}
+body{
+    background: burlywood;
+}
+.babyInput{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: auto 25% 25% 25% auto;
+
+    }
+
+.babyCol{
+    
+    padding: 5%;
+    border: solid black 2px;
+    background: yellow;
+    margin: 2% 5% 2% 5%;
+    text-align: center;
+    
+    
+}

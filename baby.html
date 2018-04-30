@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    <style>h1{
+            margin: auto;
+            margin-top: 2%;
+            padding: 1%;
+            border: black 2px solid;
+            background: yellow;
+            text-align: center;
+        }
+        body{
+            background:burlywood;
+            
+        }
+        .babyInput{
+            margin-top: 2%;
+            display: grid;
+            grid-template-columns:  auto auto auto;
+        
+            }
+        
+        .babyCol{
+            padding: 5%;
+            border: solid black 2px;
+            background: yellow;
+            margin: 2% 5% 2% 5%;
+            text-align: center;
+        }
+        
+        ul{
+            text-align: left;
+            background: yellow;
+            margin-left: 1%;
+            margin-top: 1%;
+        }</style>
+    <title>Mallory</title>
+    
+</head>
+<body>
+    <h1>Mallory's Schedules</h1>
+    <div class="babyInput">
+        <!-- <div></div> -->
+        <div class='babyCol'>   
+            <form action="/poop" method="POST">
+                <button type="submit">POOP</button>
+            </form>
+            <ul id="poopInfo"></ul>
+        </div>
+        <div class='babyCol'>   
+                <form action="/feeding" method="POST">
+                    <button type="submit">Feeding Time</button>
+                </form>
+                <ul id="feedingInfo"></ul>
+            </div>
+            <div class='babyCol'>
+                    <form action="/sleep" method="POST">
+                        <button type="submit">Bed Time or Naps</button>
+                    </form>
+                    <ul id="SleepInfo"></ul>
+                </div>
+        <!-- <div></div> -->
+    </div>
+    <script>
+        $.get("/api",function(data){
+            if(data){
+                console.log(data);
+                for (var i = 0; i<data.length; i++){
+                    $("#feedingInfo").prepend("<li>" + data[i].feeding + '</li>');
+                    $("#SleepInfo").prepend("<li>" + data[i].sleeping + '</li>');
+                    $("#poopInfo").prepend("<li>" + data[i].diaperChange + '</li>');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
