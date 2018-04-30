@@ -5,6 +5,7 @@ var path = require("path");
 var ip = require("ip");
 var app = express();
 var d = new Date();
+var nothing = "Nothing";
 var time1 ;
 timeIs = (d.getMonth()+1).toString() + "/" + d.getDate().toString() + "/" + d.getFullYear().toString() + " " + d.getHours().toString() + ":" + d.getMinutes().toString();
 time1 = timeIs;
