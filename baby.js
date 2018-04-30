@@ -35,7 +35,7 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 app.post('/poop', function(req,res){
-    
+    logTime();
     connection.query("INSERT INTO babyThings SET ?",
       {
         sleeping: nothing,
@@ -49,7 +49,7 @@ app.post('/poop', function(req,res){
 
 });
 app.post('/feeding', function(req,res){
-    
+  logTime();
     connection.query("INSERT INTO babyThings SET ?",
       {
         sleeping: nothing,
@@ -63,7 +63,7 @@ app.post('/feeding', function(req,res){
 
 });
 app.post('/sleep', function(req,res){
-    
+  logTime();
     connection.query("INSERT INTO babyThings SET ?",
       {
        sleeping: time1,
@@ -93,3 +93,8 @@ app.get("/api", function (req,res){
     console.log("Server listening on: http://localhost:" + PORT);
     console.log("Server listening on: " + ip.address() +":" + PORT);
   });
+function logTime(){
+  d = new Date();
+  timeIs = (d.getMonth()+1).toString() + "/" + d.getDate().toString() + "/" + d.getFullYear().toString() + " " + d.getHours().toString() + ":" + d.getMinutes().toString();
+  time1 = timeIs;
+}
